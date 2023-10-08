@@ -52,7 +52,7 @@ void floatingMistakes() {
         sum += b;
     }
 
-    printf("Ergebnis: %f\n", a - sum);
+    printf("Ergebnis: %f\n", a - sum); // should be 0, but it's not
 }
 
 // ---------------------
