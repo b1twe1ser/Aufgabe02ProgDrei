@@ -1,5 +1,5 @@
 #include <stdio.h>
-//#include <limits.h>
+#include <limits.h>
 double PI = 3.14159;
 
 // -----------------------
@@ -63,43 +63,56 @@ void floatingMistakes() {
  * safeAdd:
         add edi, esi
         mov eax, -1
-        cmovno eax, edi
+        cmovno eax, edi ; Conditional move if not overflow
         ret
-
-        only four instructions!
  */
 int safeAdd(int a, int b) {
-    int result;
-    if (!__builtin_add_overflow(a, b, &result)) {
-        return result;
-    } else {
-        return -1;
+    int res;
+    if (!__builtin_add_overflow(a, b, &res)) {
+        return res;
     }
+    return -1;
 }
 
 /*
- * safeAddNaive:
-        cmp     edi, esi
-        lea     eax, [rdi+rsi]
-        cmovg   edi, esi
-        cmp     eax, edi
-        jl      .L4
-        ret
-.L4:
-        mov     eax, -1
-        ret
+addSafeNaive:
+    lea     eax, [rdi+rsi]   ; Calculate the sum of rdi and rsi and store it in eax
+    test    edi, edi         ; Test if rdi (a) is greater than zero
+    setg    cl               ; Set cl to 1 if rdi is greater than zero (cl is used as a temporary flag)
+    test    esi, esi         ; Test if rsi (b) is greater than zero
+    setg    dl               ; Set dl to 1 if rsi is greater than zero (dl is used as a temporary flag)
+    test    cl, dl           ; Test if both cl and dl are set (i.e., both a and b are greater than zero)
+    je      .L11             ; If not, jump to label .L11 (to handle overflow)
+    test    eax, eax         ; Test if the sum in eax is negative
+    js      .L9              ; If it's negative, jump to label .L9 (to handle overflow)
+
+.L11:
+    test    edi, esi         ; Test if both a and b have the same sign (both positive or both negative)
+    jns     .L5              ; If they have the same sign, jump to label .L5 (to handle positive result)
+    test    eax, eax         ; Test if the sum in eax is negative
+    mov     edx, -1          ; Set edx to -1 (to represent the overflowed case)
+    cmovg   eax, edx         ; Conditionally move edx into eax if the sum is greater than zero
+    ret
+
+.L9:
+    mov     eax, -1          ; Set eax to -1 (to represent the overflowed case)
+
+.L5:
+    ret                       ; Return the result in eax
+
  */
-//int addSafeNaive(int a, int b) {
-//    int result = a + b;
-//
-//    if (result < a && result < b) {
-//        return -1;
-//    } else {
-//        return result;
-//    }
-//}
+int addSafeNaive(int a, int b) {
+    int sum = a + b;
+    if ((a > 0 && b > 0 && sum < 0) ||
+        (a < 0 && b < 0 && sum > 0)) {
+        return -1;
+    }
+    return sum;
+
+}
 
 int main() {
     printf("%d\n", safeAdd(2, 2));
+    printf("%d\n", addSafeNaive(-590, 52));
     return 0;
 }

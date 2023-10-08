@@ -1,4 +1,4 @@
-# Install script for directory: /Users/nicoruckner/development/c/Ubeung_02
+# Install script for directory: /Users/rueckner/C/Sem_3/Aufgabe02ProgDrei/Ubeung_02
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/nicoruckner/development/c/Ubeung_02/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/rueckner/C/Sem_3/Aufgabe02ProgDrei/Ubeung_02/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

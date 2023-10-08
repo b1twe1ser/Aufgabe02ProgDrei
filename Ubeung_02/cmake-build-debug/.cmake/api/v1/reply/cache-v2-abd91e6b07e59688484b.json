@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/nicoruckner/development/c/Ubeung_02/cmake-build-debug"
+			"value" : "/Users/rueckner/C/Sem_3/Aufgabe02ProgDrei/Ubeung_02/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -383,7 +383,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/nicoruckner/development/c/Ubeung_02/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/Users/rueckner/C/Sem_3/Aufgabe02ProgDrei/Ubeung_02/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -443,7 +443,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/nicoruckner/Development/C/Ubeung_02"
+			"value" : "/Users/rueckner/C/Sem_3/Aufgabe02ProgDrei/Ubeung_02"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
@@ -663,7 +663,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "13.6"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_OSX_SYSROOT",
@@ -1015,7 +1015,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/nicoruckner/development/c/Ubeung_02/cmake-build-debug"
+			"value" : "/Users/rueckner/C/Sem_3/Aufgabe02ProgDrei/Ubeung_02/cmake-build-debug"
 		},
 		{
 			"name" : "Ubeung_02_IS_TOP_LEVEL",
@@ -1039,7 +1039,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/nicoruckner/development/c/Ubeung_02"
+			"value" : "/Users/rueckner/C/Sem_3/Aufgabe02ProgDrei/Ubeung_02"
 		}
 	],
 	"kind" : "cache",
